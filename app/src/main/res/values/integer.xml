@@ -1,0 +1,16 @@
+<resources>
+    <integer name="architecture">43</integer>
+    <integer name="crafts">76</integer>
+    <integer name="business">83</integer>
+    <integer name="culinary">45</integer>
+    <integer name="design">87</integer>
+    <integer name="fashion">344</integer>
+    <integer name="film">34</integer>
+    <integer name="gaming">234</integer>
+    <integer name="drawing">44</integer>
+    <integer name="lifestyle">88</integer>
+    <integer name="music">55</integer>
+    <integer name="painting">222</integer>
+    <integer name="photography">786</integer>
+    <integer name="tech">99</integer>
+</resources>

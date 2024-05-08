@@ -27,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.integerResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -74,7 +75,7 @@ fun CardLayout(topic:Topic,modifier: Modifier=Modifier){
                 Text(text = stringResource(id = topic.topic))
                 Row(modifier = Modifier.padding(top = 8.dp,)) {
                     Text(text = "⁂", modifier = Modifier.padding(end = 8.dp))
-                    Text(text = stringResource(id = topic.number.toInt()))
+                    Text(text = ""+integerResource(id = topic.number))
                 }
 
             }
