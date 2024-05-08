@@ -1,8 +1,9 @@
 package com.radroid.gridlist
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.IntegerRes
 import androidx.annotation.StringRes
 
 data class Topic(@StringRes val topic:Int,
-                 val number: Long,
+                 @IntegerRes val number: Int,
                  @DrawableRes val image:Int)
