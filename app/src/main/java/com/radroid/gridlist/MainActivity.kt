@@ -39,53 +39,51 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             GridListTheme {
-              GridListApp()
+                GridListApp()
             }
         }
     }
 }
+
 @Composable
-fun GridListApp(modifier: Modifier=Modifier){
-CardList(topicList = DataSource().topic())
+fun GridListApp(modifier: Modifier = Modifier) {
+    CardList(topicList = DataSource().topic())
 }
+
 @Composable
-fun CardList(topicList:List<Topic>,modifier: Modifier=Modifier){
-    LazyVerticalGrid(columns = GridCells.Fixed(2),
+fun CardList(topicList: List<Topic>, modifier: Modifier = Modifier) {
+    LazyVerticalGrid(
+        columns = GridCells.Fixed(2),
         verticalArrangement = Arrangement.spacedBy(8.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-items(topicList){item->
-    CardLayout(topic = item)
-}
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        items(topicList) { item ->
+            CardLayout(topic = item)
         }
     }
-
+}
 
 
 @Composable
-fun CardLayout(topic:Topic,modifier: Modifier=Modifier){
+fun CardLayout(topic: Topic, modifier: Modifier = Modifier) {
     Card(modifier = Modifier) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Image(painter = painterResource(id = topic.image), contentDescription = stringResource(id = topic.topic),
+            Image(
+                painter = painterResource(id = topic.image),
+                contentDescription = stringResource(id = topic.topic),
                 modifier = Modifier
                     .height(68.dp)
                     .width(68.dp),
-                contentScale = ContentScale.Crop)
+                contentScale = ContentScale.Crop
+            )
             Column(modifier = Modifier.padding(top = 16.dp, end = 16.dp, start = 16.dp)) {
                 Text(text = stringResource(id = topic.topic))
-                Row(modifier = Modifier.padding(top = 8.dp,)) {
+                Row(modifier = Modifier.padding(top = 8.dp)) {
                     Text(text = "⁂", modifier = Modifier.padding(end = 8.dp))
-                    Text(text = stringResource(id = topic.number.toInt()))
+                    Text(text = topic.number.toString())
                 }
 
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    GridListTheme {
-GridListApp()
     }
 }
